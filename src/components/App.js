@@ -1,23 +1,39 @@
 import React from "react";
 import { Button } from "./atoms/button/Button";
+import { GoBell, GoCloudDownload, GoDatabase } from "react-icons/go";
 
 export const App = () => {
+  const handleClick = () => {
+    console.log(
+      "Addind event handler by destructuring event handlers through {...rest} in the child component instead of accessing each handler separately"
+    );
+  };
+
   return (
     <>
       <div>
-        <Button>Hello</Button>
+        <Button onClick={handleClick} primary rounded>
+          <GoBell />
+          Primary
+        </Button>
       </div>
       <div>
-        <Button>This is a button</Button>
+        <Button secondary>Secondary</Button>
       </div>
       <div>
-        <Button>Children</Button>
+        <Button danger>
+          <GoDatabase />
+          Danger
+        </Button>
       </div>
       <div>
-        <Button>Hide ads</Button>
+        <Button warning>Warning</Button>
       </div>
       <div>
-        <Button>Show ads</Button>
+        <Button success>
+          <GoCloudDownload />
+          Success
+        </Button>
       </div>
     </>
   );
