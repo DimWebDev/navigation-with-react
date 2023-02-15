@@ -1,8 +1,8 @@
 import React from "react";
-import { Button } from "./atoms/button/Button";
+import { Button } from "../components/Button";
 import { GoBell, GoCloudDownload, GoDatabase } from "react-icons/go";
 
-export const App = () => {
+export const ButtonPage = () => {
   const handleClick = () => {
     console.log(
       "Addind event handler by destructuring event handlers through {...rest} in the child component instead of accessing each handler separately"
