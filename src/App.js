@@ -1,31 +1,24 @@
 import React from "react";
-import { Accordion } from "./components/Accordion";
+import { useState } from "react";
+import { Dropdown } from "./components/Dropdown";
 
-const items = [
-  {
-    id: "dfgsdfgh",
-    label: "Introduction",
-    content:
-      "Welcome to my website! Here you can find information about my work and projects.",
-  },
-  {
-    id: "sdhcv",
-    label: "About Me",
-    content:
-      "I am a software engineer with experience in web development and machine learning. I enjoy coding and learning new technologies.",
-  },
-  {
-    id: "sdjhgakjhdbxd",
-    label: "Projects",
-    content:
-      "Some of my recent projects include a social media platform, a recommender system, and a chatbot. Check out my GitHub for more details!",
-  },
+const options = [
+  { label: "Option 1", value: "option1" },
+  { label: "Option 2", value: "option2" },
+  { label: "Option 3", value: "option3" },
+  { label: "Option 4", value: "option4" },
 ];
 
 export const App = () => {
+const [selection, setSelection] = useState(null)
+
+const handleSelect = (option) => {
+  setSelection(option)
+}
+
   return (
     <>
-      <Accordion items={items} />
+      <Dropdown options={options} selection={selection} onSelect={handleSelect} />
     </>
   );
 };
