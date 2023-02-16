@@ -10,15 +10,20 @@ const options = [
 ];
 
 export const App = () => {
-const [selection, setSelection] = useState(null)
+  const [selection, setSelection] = useState(null);
+  const [selection2, setSelection2] = useState(null);
 
-const handleSelect = (option) => {
-  setSelection(option)
-}
+  const handleSelect = (option) => {
+    setSelection(option);
+  };
+  const handleSelect2 = (option) => {
+    setSelection2(option);
+  };
 
   return (
-    <>
-      <Dropdown options={options} selection={selection} onSelect={handleSelect} />
-    </>
+    <div className="flex">
+      <Dropdown options={options} value={selection} onChange={handleSelect} />
+      <Dropdown options={options} value={selection2} onChange={handleSelect2} />
+    </div>
   );
 };
